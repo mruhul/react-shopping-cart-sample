@@ -43,7 +43,6 @@ var CartStore = {
 		var cartItem = _.find(this._cart.items, function(item){
 			return item.book.id == productId;
 		});
-		console.log(productId, this._cart.items,cartItem);
 
 		if(cartItem){
 			return cartItem.quantity;
