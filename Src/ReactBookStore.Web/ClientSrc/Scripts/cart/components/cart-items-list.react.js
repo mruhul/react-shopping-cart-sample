@@ -1,5 +1,5 @@
 var React = require('react');
-var CartItem = require('./cart-item-component');
+var CartItem = require('./cart-item.react');
 var numeral = require('numeral');
 var FormatPrice = require('./../../common/components/format-price.react');
 

@@ -1,9 +1,8 @@
 ﻿var React = require('react');
-var CartItem = require('./cart-item-component.js');
-var EmptyCart = require('./empty-cart-component');
+var EmptyCart = require('./empty-cart.react');
+var CartItemsList = require('./cart-items-list.react');
 var CartStore = require('./../stores/cart-store');
 var CartActions = require('./../actions/cart-actions');
-var CartItemsList = require('./cart-items-list-component');
 
 var postal = require('postal');
 

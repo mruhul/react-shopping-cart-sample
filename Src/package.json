@@ -35,5 +35,6 @@
     "qwest": "qwest"
   },
   "dependencies": {
+    "keymirror": "^0.1.1"
   }
 }

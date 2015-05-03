@@ -1,5 +1,5 @@
 var React  = require('react');
-var ProductRow = require('./product-row');
+var ProductRow = require('./product-row.react');
 var ProductListActions = require('./../actions/product-list-actions');
 var ProductListStore = require('./../stores/product-list-store');
 

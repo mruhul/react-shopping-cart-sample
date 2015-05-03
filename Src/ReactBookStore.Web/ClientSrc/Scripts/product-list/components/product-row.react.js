@@ -1,5 +1,5 @@
 var React = require('react');
-var AddToCartBtn = require('./../../cart/components/add-to-cart-button');
+var AddToCartBtn = require('./../../cart/components/add-to-cart-button.react');
 var CartStatus = require('./../../cart/components/cart-status.react');
 var FormatPrice = require('./../../common/components/format-price.react');
 

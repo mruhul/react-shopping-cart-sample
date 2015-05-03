@@ -1,7 +1,7 @@
 var React = require('react');
-var ProductList = require('./product-list/components/product-list');
+var ProductList = require('./product-list/components/product-list.react');
 var CategoryMenu = require('./product-list/components/category-menu.react');
-var Cart = require('./cart/components/cart-component');
+var Cart = require('./cart/components/cart.react');
 
 
 React.render(
