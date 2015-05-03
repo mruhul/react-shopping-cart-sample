@@ -4,7 +4,7 @@ var ProductListStore = require('./../stores/product-list-store');
 
 
 var CategoryMenu = React.createClass({	
-	_onCategorySelectedSubscription = null,
+	_onCategorySelectedSubscription : null,
 
 	getInitialState: function(){
 		return {
