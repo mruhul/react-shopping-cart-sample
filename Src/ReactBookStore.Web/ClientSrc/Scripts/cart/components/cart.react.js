@@ -7,6 +7,9 @@ var CartActions = require('./../actions/cart-actions');
 var postal = require('postal');
 
 var Cart = React.createClass({
+    _onItemsLoadedSubscription: null,
+    _onItemAddedSubscription: null,
+
 	getInitialState: function(){
 		return{
 			cart: null,
@@ -14,15 +17,15 @@ var Cart = React.createClass({
 		}
 	},
 	componentWillMount: function(){	
-		CartStore.onItemsLoaded(this._onItemsLoaded);
-		CartStore.onItemAdded(this._onChange);
+		this._onItemsLoadedSubscription = CartStore.onItemsLoaded(this._onItemsLoaded);
+		this._onItemAddedSubscription = CartStore.onItemAdded(this._onChange);
 	},
 	componentDidMount: function(){
 		CartActions.loadItems();
 	},
 	componentDidUnmount: function(){
-		//CartStore.offItemsLoaded();
-		//CartStore.offItemsAdded();
+		this._onItemsLoadedSubscription.unsubscribe();
+        this._onItemAddedSubscription.unsubscribe();
 	},
     _onItemsLoaded: function(data){
         this.setState({ cart: CartStore.getCart(), loading: false });

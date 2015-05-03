@@ -4,15 +4,16 @@ var CartStore = require('./../stores/cart-store.js');
 var FormatPrice = require('./../../common/components/format-price.react');
 
 var CartItem = React.createClass({
+	_onItemRemovedSubscription : null,
 	handleClick: function(e){
 		e.preventDefault();
 		CartActions.removeItem(this.props.item.book.id);
 	},
 	componentWillMount: function(){
-		CartStore.onItemRemoved(this._callback);
+		this._onItemRemovedSubscription = CartStore.onItemRemoved(this._callback);
 	},
 	componentWillUnmount: function(){
-		//CartStore.offItemRemoved();
+		this._onItemRemovedSubscription.unsubscribe();
 	},
 	_callback : function(){
 		CartActions.loadItems();

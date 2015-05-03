@@ -20,7 +20,6 @@ var ProductList = React.createClass({
 		_onLoaded.unsubscribe();
 	},
 	_onChanged : function(data){
-		console.log(data);
 		this.setState({ items: ProductListStore.getProducts() });
 	},
 	render: function(){
