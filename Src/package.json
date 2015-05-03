@@ -1,0 +1,39 @@
+{
+  "name": "ReactBookStore",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "bower": "^1.4.1",
+    "bower-installer": "^1.2.0",
+    "browserify-global-shim": "^1.0.0",
+    "gulp": "^3.8.11",
+    "gulp-browserify": "^0.5.1",
+    "gulp-concat": "^2.5.2",
+    "gulp-less": "^3.0.3",
+    "gulp-uglify": "^1.2.0",
+    "path": "^0.11.14",
+    "reactify": "^1.1.0"
+  },
+  "browserify": {
+    "transform": [
+      "browserify-global-shim"
+    ]
+  },
+  "browserify-global-shim": {
+    "jQuery": "$",
+    "react": "React",
+    "flux": "Flux",
+    "lodash": "_",
+    "postal": "postal",
+    "numeral": "numeral",
+    "qwest": "qwest"
+  },
+  "dependencies": {
+  }
+}

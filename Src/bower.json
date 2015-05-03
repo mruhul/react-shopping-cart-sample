@@ -1,0 +1,25 @@
+{
+  "name": "ReactBookStore",
+  "version": "0.0.0",
+  "authors": [
+    "Ruhul Amin <mruhul@gmail.com>"
+  ],
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "react": "~0.13.2",
+    "qwest": "~1.5.11"
+  },
+  "install": {
+    "path": "ReactBookStore.Web/clientsrc/vendors"
+  }
+}

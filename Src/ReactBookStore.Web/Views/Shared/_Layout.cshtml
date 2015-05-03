@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@Page.Title</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Assets/Css/site.css" rel="stylesheet" />
+
+    @RenderSection("head", required: false)
+</head>
+<body>
+    <div class="container">
+        @RenderBody()
+    </div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/3.7.0/lodash.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/postal.js/1.0.2/postal.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/1.5.3/numeral.min.js"></script>
+    <script src="~/Assets/scripts/vendors.js"></script>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>
