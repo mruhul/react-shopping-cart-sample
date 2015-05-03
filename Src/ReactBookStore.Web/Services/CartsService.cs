@@ -1,12 +1,18 @@
 ﻿using System;
 using System.Linq;
+using System.Web;
 
 namespace ReactBookStore.Web.Services
 {
     public class CartsService
     {
-        private CacheStore _cache;
-        private BooksService _booksService;
+        private readonly CacheStore _cache;
+        private readonly BooksService _booksService;
+
+        private string GetCacheKey()
+        {
+            return string.Format("CartsService.Cart.{0}", HttpContext.Current.Request.AnonymousID);
+        }
 
         public CartsService()
         {
@@ -16,12 +22,12 @@ namespace ReactBookStore.Web.Services
 
         public Cart Get()
         {
-            return _cache.Get("cart", () => new Cart());
+            return _cache.Get(GetCacheKey(), () => new Cart());
         }
 
         private void Save(Cart cart)
         {
-            _cache.Set("cart", cart, 60);
+            _cache.Set(GetCacheKey(), cart, 60);
         }
 
         public void RemoveItem(int bookId)

@@ -1,20 +1,20 @@
 var ProductDispatcher = require('./../dispatchers/product-dispatcher');
 var CartStore = require('./../../cart/stores/cart-store');
 var ProductService = require('./../services/product-service');
+var constants = require('./../constants/product-constants');
 
-var cartChannel = postal.channel('cart');
 var _ = require('lodash');
 
-ProductDispatcher.subscribe('cmd.items.loadall', function(data, envelope){
+ProductDispatcher.subscribe(constants.PRD_CMD_LOAD_ALL, function(data, envelope){
 	ProductService.getByCategory(data.category)
 		.then(function(data){
 			ProductListStore._items = data;
 			ProductListStore._loadCartQty(ProductListStore._items);	
-			ProductDispatcher.dispatch('event.items.loaded', { items : ProductListStore._items });			
+			ProductDispatcher.dispatch( constants.PRD_EVENT_ITEMS_LOADED , { items : ProductListStore._items });			
 		});
 });
 
-ProductDispatcher.subscribe('cmd.categories.select', function(data, envelope){
+ProductDispatcher.subscribe(constants.PRD_CMD_SELECT_CATEGORY , function(data, envelope){
 	
 	var category = _.find(ProductListStore.getCategories(), function(item){
 		return item.name == data.name;
@@ -30,13 +30,14 @@ ProductDispatcher.subscribe('cmd.categories.select', function(data, envelope){
 
 	ProductListStore._selectedCategoryName = category.name;
 
-	ProductDispatcher.dispatch('event.categories.selected', category);
-	ProductDispatcher.dispatch('cmd.items.loadall', {category : category.name});
+	ProductDispatcher.dispatch( constants.PRD_EVENT_CATEGORY_SELECTED, category);
+	ProductDispatcher.dispatch(constants.PRD_CMD_LOAD_ALL, {category : category.name});
 });
 
-cartChannel.subscribe('event.items.loaded', function(data){
+
+CartStore.onItemsLoaded(function(){	
 	ProductListStore._loadCartQty(ProductListStore._items);	
-	ProductDispatcher.dispatch('event.items.loaded', { items : ProductListStore._items });	
+	ProductDispatcher.dispatch(constants.PRD_EVENT_ITEMS_LOADED, { items : ProductListStore._items });
 });
 
 
@@ -61,10 +62,10 @@ var ProductListStore = {
 		});
 	},
 	onLoaded : function(callback){
-		return ProductDispatcher.subscribe('event.items.loaded', callback);
+		return ProductDispatcher.subscribe(constants.PRD_EVENT_ITEMS_LOADED, callback);
 	},
 	onCategorySelected: function(callback){
-		return ProductDispatcher.subscribe('event.categories.selected', callback);
+		return ProductDispatcher.subscribe(constants.PRD_EVENT_CATEGORY_SELECTED, callback);
 	},
 	_loadCartQty: function(items){
 		_.forEach(items, function(item){
