@@ -196,5 +196,5 @@ FakesAssemblies/
 *.opt
 
 #Custom
-Assets/css
-Assets/scripts
+Src/ReactBookStore.Web/Assets/css
+Src/ReactBookStore.Web/Assets/scripts
