@@ -10,5 +10,5 @@ A sample implementation of shopping cart using reactjs, postal.js
 - run npm install
 - run bower install
 - run gulp
-- you can click the batch file in root directory to start the app in iisexpress on port 8081
+- you can click the batch file in root directory named "start-web.bat" to start the app in iisexpress on port 8081
 - Now you should able to browse the site "localhost:8081"
