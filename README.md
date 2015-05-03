@@ -12,3 +12,6 @@ A sample implementation of shopping cart using reactjs, postal.js
 - run gulp
 - you can click the batch file in root directory named "start-web.bat" to start the app in iisexpress on port 8081
 - Now you should able to browse the site "localhost:8081"
+
+## Note
+The demo application using cache for cart. So if two persons using same site then both of them actually using same cart. Which is totally wrong in real world.
