@@ -1,5 +1,5 @@
 # react-shopping-cart-sample
-A sample implementation of shopping cart using reactjs, postal.js. For client side script srce please have a look at "Src\ReactBookStore.Web\ClientSrc" folder.
+A sample implementation of shopping cart using reactjs, postal.js. For client side script source please have a look at "Src\ReactBookStore.Web\ClientSrc" folder.
 
 ## steps to run
 - Make sure you build your visual studio solution to make the api works.
