@@ -32,7 +32,9 @@
     "lodash": "_",
     "postal": "postal",
     "numeral": "numeral",
-    "qwest": "qwest"
+    "qwest": "qwest",
+    "store" : "store",
+    "reflux": "Reflux"
   },
   "dependencies": {
     "keymirror": "^0.1.1"

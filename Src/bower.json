@@ -17,7 +17,8 @@
   ],
   "dependencies": {
     "react": "~0.13.2",
-    "qwest": "~1.5.11"
+    "qwest": "~1.5.11",
+    "reflux": "~0.2.7"
   },
   "install": {
     "path": "ReactBookStore.Web/clientsrc/vendors"

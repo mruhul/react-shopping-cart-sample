@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace ReactBookStore.Web.Services
@@ -6,9 +7,17 @@ namespace ReactBookStore.Web.Services
     public class Cart
     {
         public Cart()
+            : this(Guid.NewGuid())
         {
+        }
+
+        public Cart(Guid id)
+        {
+            Id = id;
             Items = new List<CartItem>();
         }
+
+        public Guid Id { get; set; }
 
         public List<CartItem> Items { get; set; }
 

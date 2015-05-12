@@ -12,5 +12,16 @@ namespace ReactBookStore.Web.Controllers
         {
             return View();
         }
+
+        public ActionResult Reflux()
+        {
+            return View();
+        }
+
+
+        public ActionResult Store()
+        {
+            return View();
+        }
     }
 }

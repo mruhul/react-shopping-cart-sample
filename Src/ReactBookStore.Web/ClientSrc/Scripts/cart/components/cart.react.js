@@ -35,7 +35,10 @@ var Cart = React.createClass({
         CartActions.loadItems();
 	},
 	_getLoadingCss: function(){
-		return this.state.loading ? 'loading' : '';
+        return '';
+		return this.state.loading 
+                && this.state.cart 
+                && this.state.cart.isEmpty ? 'loading' : '';
 	},
     render: function() {
     	
@@ -54,7 +57,7 @@ var Cart = React.createClass({
         return (
             <div className="cart-component">
                 <h2><i className="glyphicon glyphicon-shopping-cart"></i> Cart Details</h2>
-                <div className={this._getLoadingCss()}>
+                <div>
             		{ contentHtml }
                 </div>
             </div>

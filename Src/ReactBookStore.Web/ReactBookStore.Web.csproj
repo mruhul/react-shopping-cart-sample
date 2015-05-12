@@ -245,6 +245,8 @@
     <None Include="Project_Readme.html" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <None Include="Views\Home\Reflux.cshtml" />
+    <Content Include="Views\Home\Store.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
