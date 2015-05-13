@@ -23,5 +23,10 @@ namespace ReactBookStore.Web.Controllers
         {
             return View();
         }
+
+        public ActionResult Demo()
+        {
+            return View();
+        }
     }
 }
