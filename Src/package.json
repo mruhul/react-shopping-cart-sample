@@ -17,6 +17,7 @@
     "gulp-concat": "^2.5.2",
     "gulp-less": "^3.0.3",
     "gulp-uglify": "^1.2.0",
+    "gulp-util": "^3.0.4",
     "path": "^0.11.14",
     "reactify": "^1.1.0"
   },
@@ -33,7 +34,7 @@
     "postal": "postal",
     "numeral": "numeral",
     "qwest": "qwest",
-    "store" : "store",
+    "store": "store",
     "reflux": "Reflux"
   },
   "dependencies": {
